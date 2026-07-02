@@ -60,7 +60,7 @@ const AboutUs = () => {
             </li>
             <li>
               Terus berinovasi dengan teknologi terbaru untuk mendukung
-              kesuksesan klien kami.
+              kesuksesan klien kami nih.
             </li>
           </ul>
         </div>

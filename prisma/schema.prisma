@@ -1,0 +1,44 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Portfolio {
+  id               String   @id @default(uuid())
+  title            String
+  clientName       String
+  category         String   // e.g., "Landing Page", "SaaS & App", "E-Commerce"
+  description      String
+  technologies     String   // Comma-separated tags, e.g., "Next.js, Prisma, Tailwind"
+  mainImage        String   // Saved image path
+  additionalImages String   // JSON string array of extra image paths
+  duration         String   // e.g., "3 Minggu"
+  completionDate   DateTime
+  liveDemoUrl      String?
+  gitHubUrl        String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Order {
+  id                 String   @id @default(uuid())
+  fullName           String
+  email              String
+  whatsappNumber     String
+  businessName       String
+  businessType       String
+  projectType        String   // e.g., "Website", "Mobile Application"
+  selectedPackage    String   // e.g., "Landing Page", "Company Profile"
+  additionalServices String   // JSON string array of extra services
+  projectDescription String
+  estimatedBudget    String
+  targetCompletion   DateTime
+  additionalNotes    String?
+  pdfPath            String?  // Saved path for generated proposal PDF
+  status             String   @default("PENDING") // PENDING, REVIEWED, COMPLETED
+  createdAt          DateTime @default(now())
+}

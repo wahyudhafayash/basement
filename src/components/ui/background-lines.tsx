@@ -17,8 +17,8 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-[20rem] md:h-screen w-full bg-white dark:bg-black",
-        className
+        "h-screen w-full bg-background relative overflow-hidden flex flex-col justify-center items-center",
+        className,
       )}
     >
       <SVG svgOptions={svgOptions} />
